@@ -1,5 +1,5 @@
 import React , {useEffect, useState} from 'react'
-import useToken from 'client/src/components/pages/general/useToken'
+import useToken from '../../general/useToken'
 import axios from 'axios'
 import {OverlayTrigger,Tooltip, Container, Col, Row, DropdownButton, Dropdown, Button, Table} from 'react-bootstrap'
 
