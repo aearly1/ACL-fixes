@@ -340,7 +340,7 @@ router.route('/slotLinkingRequest')
             if(courseList!=null)
             for (const element of courseList) 
             {
-                if(element.coordinator.equals(userID))
+                if(element.coordinator!=null && element.coordinator.equals(userID))
                 {
                     courseId=element._id;break;
                 }
@@ -425,7 +425,7 @@ router.route('/slotLinkingRequest')
             if(courseList!=null)
             for (const element of courseList) 
             {
-                if(element.coordinator.equals(userID))
+                if(element.coordinator!=null && element.coordinator.equals(userID))
                 {
                     courseId=element._id;break;
                 }
@@ -558,7 +558,7 @@ router.route('/slotLinkingRequest')
             if(courseList!=null)
             for (const element of courseList) 
             {
-                if(element.coordinator.equals(userID))
+                if(element.coordinator!=null && element.coordinator.equals(userID))
                 {
                     courseId=element._id;break;
                 }
