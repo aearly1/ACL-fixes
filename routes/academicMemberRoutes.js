@@ -56,12 +56,10 @@ router.route('/recievedRequests')
 
         //slot linking
         const courseList = await course.find();
-        console.log(courseList);
         courseId=null;
         if(courseList!=null)
         for (const element of courseList) 
         {
-            console.log(element.coordinator);
             if(element.coordinator!=null && element.coordinator.equals(userID))
             {
                 courseId=element._id;break;
@@ -375,7 +373,7 @@ router.route('/schedule')
         var slotID=req.body.slotID;
         const day=req.body.day;
         const month=req.body.month;
-        const theDate = new Date(2016, day, month);
+        const theDate = new Date(2021, day, month);
         const temp=slotID.split("-")
         slotID=temp[2];
         
@@ -841,8 +839,8 @@ router.route('/schedule')
         const startDay=req.body.startDay;
         const endMonth=req.body.endMonth;
         const endDay=req.body.endDay;
-        const startLeave= new Date("2020", startMonth, startDay)
-        const endLeave= new Date("2020", endMonth, endDay)
+        const startLeave= new Date("2021", startMonth, startDay)
+        const endLeave= new Date("2021", endMonth, endDay)
 
         try
         {
@@ -942,7 +940,8 @@ router.route('/schedule')
         let array=[];
         if(requetsSent!=null)
          for (const element of requetsSent) {
-            var requestObject= await request.findOne({_id:element});
+            var requestObject= await request.findOne({_id:ObjectId(element)});
+            console.log(requestObject);
             var U = await staffMembers.findOne({_id: requestObject.recieverID})
                 var requestDisplayed=
                 {

@@ -21,8 +21,7 @@ function SentRequestsTable()
         setValue1(e)
     }
     const handleSelectStatus=()=>{
-        const intervalId = setInterval(() => {  
-            async function select()
+        async function select()
         {
             if(value1=="View all sent requests")
             {
@@ -54,8 +53,7 @@ function SentRequestsTable()
             }          
         }
         select();
-        }, 5000)
-        return () => clearInterval(intervalId); //This is important
+        
     }
     const handleCancel=(e)=>{
         var index = e.target.id
@@ -109,7 +107,7 @@ function SentRequestsTable()
                 {
                     var button=null;
                     const dato= new Date()
-                    if(request.status=="pending" && new Date(request.date)>=dato)
+                    if(request.status=="pending" || (request.status=="accepted" && new Date(request.date)>=dato))
                     {
                         button=(<Button onClick={handleCancel} id={request.id} variant="danger">Cancel</Button>)
                     }

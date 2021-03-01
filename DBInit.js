@@ -24,7 +24,7 @@ router.route('/')
     await faculty.deleteMany({});
 const salt = await bcrypt.genSalt(12);
 var pass = await bcrypt.hash('12345', salt);
-const instructor=new staffMembers ({
+/*const instructor=new staffMembers ({
     email: 'soubra@guc.com',
     password: pass,
     id: 'ac-10271', // Generated using uuidv4
@@ -459,7 +459,7 @@ await course.findOneAndUpdate({_id :
         annualLeaves: 5,
         Salary: 10
     })
-    await mem.save();
+    await mem.save();*/
 
      // Make a user Slim that is a HOD
         // we will assign him to department,faculty after we make them
@@ -481,7 +481,7 @@ await course.findOneAndUpdate({_id :
         })
         await slim.save();
 
-        //Make a user Hassan Soubra
+        /*//Make a user Hassan Soubra
         hashedPassword =await bcrypt.hash("SoubraSoubra",salt)
         let soubra = new staffMembers({
             id: "ac-2",
@@ -532,30 +532,30 @@ await course.findOneAndUpdate({_id :
             "Salary": 8000,
             "firstLogin": false
         })
-        await ahmed.save();
-        
+        await ahmed.save();       
 
         //MAKE A COURSE 
-        ahmed1 = await staffMembers.findOne({"name": "Ahmed Hesham"})
+        ahmed1 = await staffMembers.findOne({"name": "Ahmed Hesham"})*/
         var course1 = new course({
             courseName: "CSEN 701 - Embedded Systems",
-            teachingAssistants : [ObjectId(ahmed1._id)]  ,
-            coordinator : ObjectId(ahmed1._id)
+            teachingAssistants : []  ,
+            coordinator : null
         }
         );
         await course1.save();
         
         //MAKE A DEPARTMENT
-        let hod = await staffMembers.findOne({"name": "Slim"})
+       let hod = await staffMembers.findOne({"name": "Slim"})
         let course2 = await course.findOne({"courseName": "CSEN 701 - Embedded Systems"})
         let department1 = new department({
-            departmentName: "MET",
+            departmentName: "CSEN",
             HOD_id: ObjectId(hod._id), //Slim
             courses: [course2._id] //CSEN 701
         });
+
         await department1.save();
 
-        //MAKE A FACULTY
+        /*//MAKE A FACULTY
         let department2 = await department.findOne({"departmentName": "MET"})
         let faculty1 = new faculty({
             facultyName: "Engineering",
@@ -696,7 +696,7 @@ await course.findOneAndUpdate({_id :
             "Salary": 50000,
             "firstLogin" : false
         })
-        await ac2.save();
+        await ac2.save();*/
 
         //Make an hr user
         hashedPassword =await bcrypt.hash("12345",salt)
@@ -716,7 +716,7 @@ await course.findOneAndUpdate({_id :
         })
         await hr1.save();
 
-        // MAKE A COURSE
+       /* // MAKE A COURSE
         ac1 = await staffMembers.findOne({"id": "ac-1"})
         course1 = new course({
             courseName: "Csen301",
@@ -739,7 +739,7 @@ await course.findOneAndUpdate({_id :
             departmentName: "DMET",
             HOD_id: ObjectId(hod2._id), //ac-2
         });
-        await department2.save();
+        await department2.save();*/
 
  res.send("Data inserted successfuly");
 

@@ -142,7 +142,7 @@ import {Form, Table, Button,Container, Row, Col, DropdownButton,Dropdown} from '
             </Form.Row>
             <Form.Row>
             <Form.Group as={Col} controlId="formGridCity">
-            <Form.Label>Start Date of Leave</Form.Label>
+            <Form.Label>Start Month of Leave</Form.Label>
             <Form.Control onChange={startMonthHandler} as="select" defaultValue="Choose...">
             <option>Choose Month...</option>
             <option>1</option>
@@ -201,7 +201,7 @@ import {Form, Table, Button,Container, Row, Col, DropdownButton,Dropdown} from '
             </Form.Row>
             <Form.Row>
             <Form.Group as={Col} controlId="formGridCity">
-            <Form.Label>Start Date of Leave</Form.Label>
+            <Form.Label>End Month of Leave</Form.Label>
             <Form.Control onChange={endMonthHandler} as="select" defaultValue="Choose...">
             <option>Choose Month...</option>
             <option>1</option>
